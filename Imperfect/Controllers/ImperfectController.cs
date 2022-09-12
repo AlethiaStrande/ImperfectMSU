@@ -4,16 +4,16 @@ namespace Imperfect.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class ImperfectController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<ImperfectController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public ImperfectController(ILogger<ImperfectController> logger)
         {
             _logger = logger;
         }
@@ -29,5 +29,15 @@ namespace Imperfect.Controllers
             })
             .ToArray();
         }
+
+        //friendrequest
+        [HttpGet(Name = "Person")]
+        public String Get()
+        {
+            return new Person().successString;
+        }
+        //get person (søke på person)
+
+        //post -> legge ut bilde/post
     }
 }
